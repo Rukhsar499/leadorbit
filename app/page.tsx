@@ -11,6 +11,7 @@ import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import LeadPopup from "@/components/LeadPopup";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar />
 
       <Hero />
+      
 
       <TrustStrip />
 
@@ -38,7 +40,8 @@ export default function Home() {
       <FAQ />
 
       <FinalCTA />
-
+ {/* Auto Popup after 5 seconds */}
+      <LeadPopup autoOpen={true} delay={5000} />
       <Footer />
     </main>
   );
