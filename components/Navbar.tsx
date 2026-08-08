@@ -39,7 +39,9 @@ const [isOpen, setIsOpen] = useState(false);
         {/* Actions */}
         <div className="flex items-center gap-4">
           {/* Continuous Animating Start Free Button */}
-          <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/40 transition-all duration-300 animate-pulse hover:animate-none hover:scale-105 hover:bg-blue-500 hover:shadow-xl hover:shadow-blue-500/70 active:scale-95">
+          <button onClick={() => {
+    window.dispatchEvent(new Event("open-lead-popup"));
+  }} className="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/40 transition-all duration-300 animate-pulse hover:animate-none hover:scale-105 hover:bg-blue-500 hover:shadow-xl hover:shadow-blue-500/70 active:scale-95">
             {/* Infinite Shimmer Sweep */}
             <span className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
             <span className="relative z-10">Start Free</span>
