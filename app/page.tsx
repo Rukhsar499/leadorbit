@@ -41,7 +41,7 @@ export default function Home() {
 
       <FinalCTA />
  {/* Auto Popup after 5 seconds */}
-      <LeadPopup autoOpen={true} delay={5000} />
+      <LeadPopup />
       <Footer />
     </main>
   );
