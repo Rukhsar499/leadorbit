@@ -5,6 +5,7 @@ import { Register } from './features/auth/register/register';
 import { ForgotPassword } from './features/auth/forgot-password/forgot-password';
 import { Dashboard } from './features/dashboard/dashboard';
 import { Onboarding } from './features/onboarding/onboarding';
+import { Leads } from './features/leads/leads';
 
 export const routes: Routes = [
 
@@ -37,6 +38,11 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: Dashboard
+  },
+
+  {
+    path: 'leads',
+    component: Leads
   },
 
   {
