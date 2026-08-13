@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Topbar } from '../topbar/topbar';
 
 @Component({
   selector: 'app-main-layout',
