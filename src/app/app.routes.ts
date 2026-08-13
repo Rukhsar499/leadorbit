@@ -6,6 +6,7 @@ import { ForgotPassword } from './features/auth/forgot-password/forgot-password'
 import { Dashboard } from './features/dashboard/dashboard';
 import { Onboarding } from './features/onboarding/onboarding';
 import { Leads } from './features/leads/leads';
+import { LeadDetails } from './features/leads/lead-details/lead-details';
 
 export const routes: Routes = [
 
@@ -44,6 +45,11 @@ export const routes: Routes = [
     path: 'leads',
     component: Leads
   },
+
+  {
+      path: 'leads/:id',
+      component: LeadDetails
+    },
 
   {
     path: '**',
