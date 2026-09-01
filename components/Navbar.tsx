@@ -5,11 +5,11 @@ const Navbar = () => {
 const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md transition-all">
+    <nav className="sticky top-0 z-50 border-b border-slate-300 bg-white/80 backdrop-blur-md transition-all">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
         {/* Logo */}
-        <a href="#" className="group flex items-center gap-2 text-2xl font-bold tracking-tight text-white">
+        <a href="#" className="group flex items-center gap-2 text-2xl font-bold tracking-tight text-slate-900">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-sm font-bold text-white shadow-lg shadow-blue-500/30 transition-transform duration-300 group-hover:scale-110">
             L
           </span>
@@ -28,7 +28,7 @@ const [isOpen, setIsOpen] = useState(false);
             <a
               key={link.name}
               href={link.href}
-              className="relative text-sm font-medium text-gray-300 transition-colors duration-200 hover:text-white group"
+              className="relative text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-slate-900 group"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-blue-500 transition-all duration-300 group-hover:w-full" />
@@ -44,13 +44,13 @@ const [isOpen, setIsOpen] = useState(false);
   }} className="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/40 transition-all duration-300 animate-pulse hover:animate-none hover:scale-105 hover:bg-blue-500 hover:shadow-xl hover:shadow-blue-500/70 active:scale-95">
             {/* Infinite Shimmer Sweep */}
             <span className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-            <span className="relative z-10">Start Free</span>
+            <span className="relative z-10">Register Now</span>
           </button>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(true)}
-            className="text-gray-300 hover:text-white md:hidden focus:outline-none"
+            className="text-slate-600 hover:text-slate-900 md:hidden focus:outline-none"
             aria-label="Toggle Menu"
           >
             <svg
@@ -72,15 +72,15 @@ const [isOpen, setIsOpen] = useState(false);
 
       {/* Mobile Drawer Menu */}
       {isOpen && (
-        <div className="border-t border-white/10 bg-slate-950/95 px-6 py-4 md:hidden">
+        <div className="border-t border-slate-300 bg-white/95 px-6 py-4 md:hidden">
           <div className="flex flex-col gap-4">
-            <a href="#features" className="text-sm text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Features</a>
-            <a href="#how-it-works" className="text-sm text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>How It Works</a>
-            <a href="#integrations" className="text-sm text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Integrations</a>
-            <a href="#pricing" className="text-sm text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Pricing</a>
-            <a href="#faq" className="text-sm text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>FAQ</a>
-            <div className="pt-2 border-t border-white/10 flex flex-col gap-3">
-              <button className="text-left text-sm text-gray-300 hover:text-white">Login</button>
+            <a href="#features" className="text-sm text-slate-600 hover:text-slate-900" onClick={() => setIsOpen(false)}>Features</a>
+            <a href="#how-it-works" className="text-sm text-slate-600 hover:text-slate-900" onClick={() => setIsOpen(false)}>How It Works</a>
+            <a href="#integrations" className="text-sm text-slate-600 hover:text-slate-900" onClick={() => setIsOpen(false)}>Integrations</a>
+            <a href="#pricing" className="text-sm text-slate-600 hover:text-slate-900" onClick={() => setIsOpen(false)}>Pricing</a>
+            <a href="#faq" className="text-sm text-slate-600 hover:text-slate-900" onClick={() => setIsOpen(false)}>FAQ</a>
+            <div className="pt-2 border-t border-slate-300 flex flex-col gap-3">
+              <button className="text-left text-sm text-slate-600 hover:text-slate-900">Register Now</button>
             </div>
           </div>
         </div>

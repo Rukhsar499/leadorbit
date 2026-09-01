@@ -14,15 +14,7 @@ html {
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
 }
 
 body {
@@ -38,7 +30,18 @@ body {
     transform: translateX(-50%);
   }
 }
-
+@keyframes lineFlow {
+          0% {
+            stroke-dashoffset: 40;
+          }
+          100% {
+            stroke-dashoffset: 0;
+          }
+        }
+        .animate-line-flow {
+          stroke-dasharray: 8 6;
+          animation: lineFlow 2s linear infinite;
+        }
 @keyframes marquee-reverse {
   0% {
     transform: translateX(-50%);

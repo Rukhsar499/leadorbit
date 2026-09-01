@@ -1,24 +1,28 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, Sparkles, ArrowRight } from "lucide-react";
+import { Check, Sparkles, ArrowRight, Zap, ShieldCheck, Crown } from "lucide-react";
 
 interface Plan {
+  id: string;
   name: string;
   description: string;
   monthly: string;
   yearly: string;
   popular?: boolean;
+  icon: React.ReactNode;
   features: string[];
   cta: string;
 }
 
 const plans: Plan[] = [
   {
+    id: "starter",
     name: "Starter",
     description: "Perfect for solo entrepreneurs getting started with Facebook lead automation.",
     monthly: "$29",
     yearly: "$24",
+    icon: <Zap className="h-5 w-5 text-sky-600" />,
     features: [
       "Up to 500 Leads / month",
       "1 Facebook Page connection",
@@ -29,11 +33,13 @@ const plans: Plan[] = [
     cta: "Start 14-Day Free Trial",
   },
   {
+    id: "growth",
     name: "Growth",
     description: "Designed for growing businesses needing automated multi-channel lead routing.",
     monthly: "$79",
     yearly: "$64",
     popular: true,
+    icon: <ShieldCheck className="h-6 w-6 text-sky-600" />,
     features: [
       "Up to 5,000 Leads / month",
       "5 Facebook Page connections",
@@ -45,10 +51,12 @@ const plans: Plan[] = [
     cta: "Claim Most Popular Plan",
   },
   {
+    id: "agency",
     name: "Agency",
     description: "For agencies and large operations managing high lead volumes across clients.",
     monthly: "$199",
     yearly: "$159",
+    icon: <Crown className="h-5 w-5 text-indigo-600" />,
     features: [
       "Unlimited Leads / month",
       "Unlimited Facebook Pages",
@@ -65,40 +73,41 @@ const Pricing: React.FC = () => {
   const [yearly, setYearly] = useState<boolean>(true);
 
   return (
-    <section id="pricing" className="relative overflow-hidden px-6 py-24 sm:py-32">
-      {/* Background Ambient Glows */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-[160px]" />
+    <section id="pricing" className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-sky-50/20 to-white px-6 py-24 sm:py-32 font-sans text-slate-900">
+      {/* Soft Background Glows */}
+      <div className="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-[600px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-200/40 blur-[160px]" />
+      <div className="pointer-events-none absolute right-10 top-1/2 -z-10 h-[400px] w-[400px] rounded-full bg-indigo-200/30 blur-[140px]" />
 
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div data-aos="fade-up" className="mx-auto max-w-3xl text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-400 backdrop-blur-sm">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-300/80 bg-sky-100/70 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-sky-800 backdrop-blur-md">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-600" />
             </span>
             Flexible Pricing
           </div>
 
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
             Choose the Plan That Fits Your{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Growth Speed
             </span>
           </h2>
 
-          <p className="mt-5 text-lg leading-relaxed text-gray-400">
-            Simple, predictable pricing. No hidden setup fees or surprise charges.
+          <p className="mt-5 text-base sm:text-lg leading-relaxed text-slate-600">
+            Simple, predictable pricing for high-performing sales pipelines. No hidden setup fees.
           </p>
 
-          {/* Billing Switcher */}
-          <div className="mt-10 flex items-center justify-center gap-3">
-            <div className="relative flex rounded-2xl border border-white/10 bg-slate-950/80 p-1.5 backdrop-blur-md">
+          {/* Clean Billing Switcher (No 20% Badge) */}
+          <div className="mt-10 flex items-center justify-center">
+            <div className="relative flex items-center rounded-2xl border border-slate-200 bg-white p-1.5 shadow-lg shadow-slate-900/5 backdrop-blur-md">
               <button
                 type="button"
                 onClick={() => setYearly(false)}
-                className={`relative z-10 rounded-xl px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                  !yearly ? "text-white" : "text-gray-400 hover:text-white"
+                className={`relative z-10 rounded-xl px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+                  !yearly ? "text-white" : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 Monthly
@@ -107,17 +116,16 @@ const Pricing: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setYearly(true)}
-                className={`relative z-10 flex items-center gap-2 rounded-xl px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                  yearly ? "text-white" : "text-gray-400 hover:text-white"
+                className={`relative z-10 rounded-xl px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+                  yearly ? "text-white" : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 Yearly
-                
               </button>
 
               {/* Sliding Pill Indicator */}
               <div
-                className={`absolute top-1.5 bottom-1.5 w-[calc(50%-6px)] rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-300 ease-out ${
+                className={`absolute top-1.5 bottom-1.5 w-[calc(50%-6px)] rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 shadow-md transition-all duration-300 ease-out ${
                   yearly ? "left-[calc(50%+3px)]" : "left-1.5"
                 }`}
               />
@@ -125,68 +133,78 @@ const Pricing: React.FC = () => {
           </div>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="mt-16 grid gap-8 lg:grid-cols-3 lg:items-stretch">
+        {/* Pricing Cards Grid (Center Card Enlarged) */}
+        <div className="mt-16 grid gap-8 lg:grid-cols-3 lg:items-center">
           {plans.map((plan, index) => {
+            const isPopular = plan.popular;
+
             return (
               <div
-                key={plan.name}
+                key={plan.id}
                 data-aos="fade-up"
                 data-aos-delay={index * 120}
-                className={`group relative flex flex-col justify-between rounded-3xl p-8 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 ${
-                  plan.popular
-                    ? "border border-blue-500/50 bg-slate-900/80 shadow-2xl shadow-blue-500/20 lg:-translate-y-2"
-                    : "border border-white/10 bg-slate-950/50 hover:border-blue-500/40 hover:bg-slate-900/60 hover:shadow-xl hover:shadow-blue-500/10"
+                className={`group relative flex flex-col justify-between rounded-3xl transition-all duration-300 ${
+                  isPopular
+                    ? "z-10 p-9 border-2 border-sky-500 bg-white shadow-2xl shadow-sky-500/20 lg:-translate-y-4 lg:scale-105"
+                    : "p-7 border border-slate-200/90 bg-white/70 backdrop-blur-xl hover:border-sky-300 hover:bg-white hover:shadow-xl hover:shadow-sky-900/5 hover:-translate-y-1"
                 }`}
               >
-                {/* Rotating Border Glow Effect for Most Popular */}
-                {plan.popular && (
+                {/* Highlight Glow Effect for Popular Card */}
+                {isPopular && (
                   <>
-                    <div className="pointer-events-none absolute -inset-[1px] -z-10 overflow-hidden rounded-3xl opacity-75">
-                      <div className="absolute -inset-[500%] animate-[spin_6s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#3b82f6_0%,#1d4ed8_50%,#3b82f6_100%)]" />
+                    <div className="pointer-events-none absolute -inset-[2px] -z-10 overflow-hidden rounded-[26px]">
+                      <div className="absolute -inset-[500%] animate-[spin_8s_linear_infinite] bg-[conic-gradient(from_0deg_at_50%_50%,#0284c7_0%,#6366f1_50%,#0284c7_100%)] opacity-30" />
                     </div>
-                    {/* Inner Mask to preserve background */}
-                    <div className="pointer-events-none absolute inset-0 -z-10 rounded-3xl bg-slate-950/90" />
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-sky-600 to-indigo-600 px-4 py-1 text-xs font-black uppercase tracking-wider text-white shadow-lg shadow-sky-500/30">
+                        <Sparkles className="h-3.5 w-3.5 fill-current" />
+                        Most Popular
+                      </span>
+                    </div>
                   </>
                 )}
 
                 <div>
-                  {/* Top Bar: Name + Popular Badge */}
+                  {/* Card Icon & Header */}
                   <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-bold text-white transition-colors duration-300 group-hover:text-blue-300">
-                      {plan.name}
-                    </h3>
-
-                    {plan.popular && (
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-400/30 bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-300 backdrop-blur-md">
-                        <Sparkles className="h-3.5 w-3.5 text-blue-400" />
-                        Most Popular
-                      </span>
-                    )}
+                    <div className={`flex items-center justify-center rounded-2xl border border-sky-100 bg-sky-50 shadow-xs ${
+                      isPopular ? "h-14 w-14" : "h-11 w-11"
+                    }`}>
+                      {plan.icon}
+                    </div>
                   </div>
 
-                  <p className="mt-4 min-h-[48px] text-sm leading-relaxed text-gray-400">
+                  {/* Title & Description */}
+                  <h3 className={`font-black text-slate-900 transition-colors group-hover:text-sky-600 ${
+                    isPopular ? "mt-6 text-3xl" : "mt-5 text-2xl"
+                  }`}>
+                    {plan.name}
+                  </h3>
+
+                  <p className="mt-2 min-h-[40px] text-xs sm:text-sm font-medium leading-relaxed text-slate-600">
                     {plan.description}
                   </p>
 
-                  {/* Price */}
+                  {/* Price Block */}
                   <div className="mt-6 flex items-baseline gap-1">
-                    <span className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+                    <span className={`font-black tracking-tight text-slate-900 ${
+                      isPopular ? "text-5xl sm:text-6xl" : "text-4xl sm:text-5xl"
+                    }`}>
                       {yearly ? plan.yearly : plan.monthly}
                     </span>
-                    <span className="text-sm font-medium text-gray-400">
+                    <span className="text-xs sm:text-sm font-bold text-slate-500">
                       / month {yearly ? "(billed yearly)" : ""}
                     </span>
                   </div>
 
-                  <div className="mt-6 h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                  <div className="mt-6 h-[1px] w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
                   {/* Features List */}
                   <ul className="mt-6 space-y-3.5">
                     {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3 text-sm text-gray-300">
-                        <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400">
-                          <Check className="h-3 w-3" />
+                      <li key={feature} className="flex items-start gap-3 text-xs sm:text-sm font-medium text-slate-700">
+                        <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-sky-200 bg-sky-50 text-sky-600">
+                          <Check className="h-3 w-3 stroke-[3]" />
                         </div>
                         <span className="leading-5">{feature}</span>
                       </li>
@@ -194,14 +212,14 @@ const Pricing: React.FC = () => {
                   </ul>
                 </div>
 
-                {/* Call To Action Button */}
+                {/* CTA Button */}
                 <div className="mt-8">
                   <button
                     type="button"
-                    className={`group/btn relative flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold transition-all duration-300 ${
-                      plan.popular
-                        ? "bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:brightness-110"
-                        : "border border-white/10 bg-white/5 text-white hover:border-blue-500/50 hover:bg-blue-600 hover:text-white"
+                    className={`group/btn relative flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+                      isPopular
+                        ? "bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 text-white shadow-lg shadow-sky-500/25 hover:shadow-xl hover:shadow-sky-500/35 hover:brightness-105"
+                        : "border border-slate-200 bg-slate-50 text-slate-800 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-800"
                     }`}
                   >
                     <span>{plan.cta}</span>

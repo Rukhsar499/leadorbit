@@ -50,7 +50,7 @@ const UseCases: React.FC = () => {
             Use Cases
           </div>
 
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
             Tailored for Every Industry Running{" "}
             <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
               Facebook Lead Ads
@@ -62,8 +62,8 @@ const UseCases: React.FC = () => {
       {/* Infinite Marquee Section */}
       <div className="relative mt-16 flex flex-col gap-6 overflow-hidden py-4">
         {/* Left & Right Gradient Blur Overlays */}
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent sm:w-48" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-slate-950 via-slate-950/80 to-transparent sm:w-48" />
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-white via-white/80 to-transparent sm:w-48" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-white via-white/80 to-transparent sm:w-48" />
 
         {/* Row 1: Scrolling Left */}
         <div className="group flex w-full select-none overflow-hidden [mask-image:linear-gradient(to_right,transparent,radial-gradient(ellipse_at_center,black_70%,transparent))]">
@@ -73,13 +73,13 @@ const UseCases: React.FC = () => {
               return (
                 <div
                   key={`${item.title}-${index}`}
-                  className="flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-950/60 px-6 py-4 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-blue-500/50 hover:bg-slate-900/80 hover:shadow-xl hover:shadow-blue-500/10"
+                  className="flex items-center gap-4 rounded-2xl border border-slate-300 bg-slate-50 px-6 py-4 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-blue-500/50 hover:bg-blue-50 hover:shadow-xl hover:shadow-blue-500/10"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-500/30 bg-blue-500/10 text-blue-400 transition-all duration-300 group-hover:bg-blue-500 group-hover:text-white">
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white transition-colors duration-300 hover:text-blue-300">
+                    <h3 className="text-lg font-semibold text-slate-900 transition-colors duration-300 hover:text-blue-700">
                       {item.title}
                     </h3>
                     <span className="text-xs font-medium text-blue-400/80">
@@ -101,13 +101,13 @@ const UseCases: React.FC = () => {
               return (
                 <div
                   key={`${item.title}-${index}`}
-                  className="flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-950/60 px-6 py-4 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-blue-500/50 hover:bg-slate-900/80 hover:shadow-xl hover:shadow-blue-500/10"
+                  className="flex items-center gap-4 rounded-2xl border border-slate-300 bg-slate-50 px-6 py-4 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-blue-500/50 hover:bg-blue-50 hover:shadow-xl hover:shadow-blue-500/10"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-500/30 bg-blue-500/10 text-blue-400 transition-all duration-300 group-hover:bg-blue-500 group-hover:text-white">
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white transition-colors duration-300 hover:text-blue-300">
+                    <h3 className="text-lg font-semibold text-slate-900 transition-colors duration-300 hover:text-blue-700">
                       {item.title}
                     </h3>
                     <span className="text-xs font-medium text-blue-400/80">
