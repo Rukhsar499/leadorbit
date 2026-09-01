@@ -66,7 +66,7 @@ const HowItWorks: React.FC = () => {
   const activeStep = steps[activeStepIndex];
 
   return (
-    <section id="how-it-works" className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-50 via-slate-50 to-white px-6 py-28 font-sans text-slate-900">
+    <section id="how-it-works" className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-50 via-slate-50 to-white px-6 py-14 font-sans text-slate-900">
       
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-60" />

@@ -35,7 +35,7 @@ const useCasesRow2: UseCaseItem[] = [
 
 const UseCases: React.FC = () => {
   return (
-    <section id="use-cases" className="relative overflow-hidden px-6 py-24 sm:py-32">
+    <section id="use-cases" className="relative overflow-hidden px-6 py-12">
       {/* Background Glow Highlights */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-[150px]" />
 

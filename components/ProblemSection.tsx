@@ -40,7 +40,7 @@ const ProblemSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden px-6 py-24 text-slate-800">
+    <section className="relative overflow-hidden px-6 py-14 text-slate-800">
       {/* Embedded CSS for Timeline SVG Pulse Animations */}
       
 

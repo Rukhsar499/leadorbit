@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Form from "@/components/Form";
-import { X, Zap, ShieldCheck } from "lucide-react";
+import { X, Sparkles, ShieldCheck, ArrowUpRight } from "lucide-react";
 
 const MetaLogo = () => (
   <svg className="h-3.5 w-3.5 fill-[#0866FF]" viewBox="0 0 24 24">
@@ -47,52 +47,71 @@ const LeadPopup = () => {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
 
   if (!isOpen) return null;
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-900/40 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-md transition-all duration-300 animate-in fade-in"
       onClick={() => setIsOpen(false)}
     >
       <div
-        className="relative w-full max-w-lg rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl"
+        className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-sky-100 bg-white p-6 shadow-[0_20px_50px_rgba(2,132,199,0.15)] transition-all duration-300 animate-in zoom-in-95"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Background Lights */}
+        <div className="pointer-events-none absolute -top-16 left-1/2 -z-10 h-32 w-64 -translate-x-1/2 rounded-full bg-gradient-to-r from-sky-400/30 to-blue-500/30 blur-2xl" />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(#0284c7_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.06]" />
+
+        {/* Close Button */}
         <button
           type="button"
           onClick={() => setIsOpen(false)}
-          className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200"
+          className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-slate-200/80 bg-slate-50 text-slate-500 shadow-xs transition-all hover:rotate-90 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700"
         >
           <X className="h-4 w-4" />
         </button>
 
-        {/* Compact Single-Row Header */}
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3 pr-8">
-          <div>
-            <div className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-sky-700">
-              <Zap className="h-3 w-3 fill-sky-600 text-sky-600" /> Automated Sync
-            </div>
-            <h3 className="text-lg font-black text-slate-900 leading-none mt-0.5">
-              Start Capturing Leads
-            </h3>
+        {/* Aligned Header */}
+        <div className="flex flex-col items-start gap-1 pr-10">
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-sky-200 bg-sky-50 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-widest text-sky-700">
+            <Sparkles className="h-3 w-3 fill-sky-600 text-sky-600" />
+            <span>Instant Setup</span>
           </div>
+          <h3 className="text-xl font-black tracking-tight text-slate-900">
+            Get Started for Free
+          </h3>
+        </div>
 
-          {/* Inline Integration Badges */}
-          <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-600">
-            <span className="flex items-center gap-1 bg-slate-50 px-2 py-0.5 rounded border border-slate-200"><MetaLogo /> Meta</span>
-            <span className="flex items-center gap-1 bg-slate-50 px-2 py-0.5 rounded border border-slate-200"><GoogleLogo /> Google</span>
-            <span className="flex items-center gap-1 bg-slate-50 px-2 py-0.5 rounded border border-slate-200"><ZohoLogo /> Zoho</span>
+        {/* Perfectly Aligned Integration Row */}
+        <div className="mt-3.5 flex items-center justify-between border-y border-slate-100 py-2.5">
+          <span className="text-[11px] font-semibold text-slate-500">
+            Syncs with:
+          </span>
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200/80 bg-slate-50/80 px-2.5 py-1 text-[11px] font-bold text-slate-700 shadow-2xs">
+              <MetaLogo /> Meta
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200/80 bg-slate-50/80 px-2.5 py-1 text-[11px] font-bold text-slate-700 shadow-2xs">
+              <GoogleLogo /> Google
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200/80 bg-slate-50/80 px-2.5 py-1 text-[11px] font-bold text-slate-700 shadow-2xs">
+              <ZohoLogo /> Zoho
+            </span>
           </div>
         </div>
 
         {/* Form Container */}
-        <div className="mt-3">
+        <div className="mt-4">
           <Form />
         </div>
-       </div>
+
+        
+      </div>
     </div>
   );
 };

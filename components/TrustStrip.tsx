@@ -36,7 +36,7 @@ const TrustStrip = () => {
   },
 ];
   return (
-    <section className="relative overflow-hidden border-y border-sky-100/80 bg-gradient-to-r from-sky-50/60 via-slate-50/80 to-blue-50/60 py-7">
+    <section className="relative overflow-hidden border-y border-sky-100/80 bg-gradient-to-r from-sky-50/60 via-slate-50/80 to-blue-50/60 py-5">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {trustItems.map((item, index) => (

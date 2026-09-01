@@ -13,6 +13,7 @@ import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import LeadPopup from "@/components/LeadPopup";
 
+
 export default function Home() {
   return (
     <main>
@@ -40,6 +41,7 @@ export default function Home() {
       <FAQ />
 
       <FinalCTA />
+      
  {/* Auto Popup after 5 seconds */}
       <LeadPopup />
       <Footer />

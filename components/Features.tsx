@@ -57,7 +57,7 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-sky-50/20 to-white px-6 py-24 sm:py-32 font-sans text-slate-900">
+    <section id="features" className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-sky-50/20 to-white px-6 py-14 font-sans text-slate-900">
       {/* Background Ambient Glows */}
       <div className="pointer-events-none absolute left-1/4 top-1/4 -z-10 h-[600px] w-[600px] rounded-full bg-sky-200/40 blur-[130px]" />
       <div className="pointer-events-none absolute right-1/4 bottom-1/4 -z-10 h-[600px] w-[600px] rounded-full bg-indigo-200/30 blur-[130px]" />

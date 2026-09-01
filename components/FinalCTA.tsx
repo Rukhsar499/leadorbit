@@ -13,7 +13,7 @@ import {
 
 const FinalCTA = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-sky-50/40 to-white px-6 py-24 sm:py-32 font-sans text-slate-900">
+    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-sky-50/40 to-white px-6 py-12 font-sans text-slate-900">
       {/* CSS Keyframes for Seamless Pattern Movement */}
       <style jsx>{`
         @keyframes moveGrid {

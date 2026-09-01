@@ -95,7 +95,7 @@ const FAQ: React.FC = () => {
   return (
     <section
       id="faq"
-      className="relative overflow-hidden bg-gradient-to-b from-white via-sky-50/20 to-slate-50 px-6 py-24 sm:py-32 font-sans text-slate-900"
+      className="relative overflow-hidden bg-gradient-to-b from-white via-sky-50/20 to-slate-50 px-6 py-12 font-sans text-slate-900"
     >
       {/* Background Soft Glows */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-200/30 blur-[150px]" />

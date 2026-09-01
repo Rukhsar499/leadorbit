@@ -73,7 +73,7 @@ const Pricing: React.FC = () => {
   const [yearly, setYearly] = useState<boolean>(true);
 
   return (
-    <section id="pricing" className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-sky-50/20 to-white px-6 py-24 sm:py-32 font-sans text-slate-900">
+    <section id="pricing" className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-sky-50/20 to-white px-6 py-12 font-sans text-slate-900">
       {/* Soft Background Glows */}
       <div className="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-[600px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-200/40 blur-[160px]" />
       <div className="pointer-events-none absolute right-10 top-1/2 -z-10 h-[400px] w-[400px] rounded-full bg-indigo-200/30 blur-[140px]" />
