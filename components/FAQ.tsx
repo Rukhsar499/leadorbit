@@ -34,7 +34,7 @@ const faqs: FAQItem[] = [
     id: "how-leads-processed",
     category: "Automation",
     icon: <Zap className="h-5 w-5 text-sky-600" />,
-    question: "How does LeadOrbit receive my leads?",
+    question: "How does LeadOrbit receive my lead?",
     answer:
       "Using official Facebook Meta Graph API webhooks, LeadOrbit captures lead form submissions sub-second. Your leads are immediately validated, normalized, and dispatched without manual export steps.",
   },
