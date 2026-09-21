@@ -5,20 +5,18 @@ import { X, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 import {
   checkout,
   type CheckoutResponse,
+  
 } from "@/lib/api";
 
-interface SelectedPlan {
-  id: string;
-  name: string;
-  monthly: string;
-}
 
 interface CheckoutModalProps {
-  plan: SelectedPlan | null;
+  plan: {
+    name: string;
+    monthly: string;
+  } | null;
   isOpen: boolean;
   onClose: () => void;
 }
-
 export default function CheckoutModal({
   plan,
   isOpen,
